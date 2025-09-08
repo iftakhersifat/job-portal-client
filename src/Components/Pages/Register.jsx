@@ -1,9 +1,13 @@
 import Lottie from 'lottie-react';
-import React from 'react';
+import React, { use } from 'react';
 
 import registerLottie from '../../assets/lotties/Register.json'
+import { AuthContext } from '../Firebase/AuthProvider';
 
 const Register = () => {
+
+    // for create user
+    const {createUser} =use(AuthContext)
 
     const handelRegister = e =>{
         e.preventDefault();
@@ -11,6 +15,16 @@ const Register = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(email,password)
+
+        // create user
+        createUser(email,password)
+        .then(result=>{
+            console.log(result)
+        })
+        .catch(error=>{
+            console.log(error)
+        })
+
     }
 
 
