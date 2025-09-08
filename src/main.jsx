@@ -7,6 +7,7 @@ import { RouterProvider } from "react-router/dom";
 import Root from './Components/Root/Root.jsx';
 import Home from './Components/Pages/Home.jsx';
 import Register from './Components/Pages/Register.jsx';
+import AuthProvider from './Components/Firebase/AuthProvider.jsx';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />,
+    <AuthProvider>
+      <RouterProvider router={router} />,
+    </AuthProvider>
   </StrictMode>,
 )
