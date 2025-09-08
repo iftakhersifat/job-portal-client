@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { use } from 'react';
 import { NavLink } from 'react-router';
+import { AuthContext } from '../Firebase/AuthProvider';
 
 const Navbar = () => {
+
+    const{user, logOut}= use(AuthContext);
+
+    const handleLogOut = () => {
+    logOut()
+      .then(() => console.log('Logout successfully!'))
+      .catch(error => console.log(error.message));
+  };
 
     const links=<>
     <li><NavLink to="/">Home</NavLink></li>
@@ -28,8 +37,10 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end gap-4">
-    <NavLink className="btn" to="/register">Register</NavLink>
-    <NavLink className="btn" to="/login">Login</NavLink>
+    {
+        user? <button onClick={handleLogOut} className='btn'>Log Out</button> : <><NavLink className="btn" to="/register">Register</NavLink>
+    <NavLink className="btn" to="/login">Login</NavLink></>
+    }
   </div>
 </div>
     );

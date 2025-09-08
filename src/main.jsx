@@ -8,6 +8,7 @@ import Root from './Components/Root/Root.jsx';
 import Home from './Components/Pages/Home.jsx';
 import Register from './Components/Pages/Register.jsx';
 import AuthProvider from './Components/Firebase/AuthProvider.jsx';
+import Login from './Components/Pages/Login.jsx';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
     children: [
       {index: true, Component:Home},
       {path: "/register", Component:Register},
+      {path: "/login", Component:Login},
     ]
   },
 ]);
