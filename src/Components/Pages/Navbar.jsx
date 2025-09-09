@@ -13,11 +13,11 @@ const Navbar = () => {
   };
 
     const links=<>
-    <li><NavLink to="/">Home</NavLink></li>
+    <li><NavLink to="/" className={({ isActive }) => isActive ? 'text-green-600 underline' : 'hover:text-green-500 transition'}>Home</NavLink></li>
     </>
 
     return (
-        <div className="navbar bg-base-100 shadow-sm">
+        <div className="container mx-auto navbar bg-base-100 shadow-sm">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -29,7 +29,7 @@ const Navbar = () => {
         {links}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+    <h1 className="gap-0 font-bold text-2xl"><span className='text-blue-400'>JOB</span>PORTAL</h1>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
