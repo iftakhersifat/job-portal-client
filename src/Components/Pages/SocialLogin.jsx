@@ -1,12 +1,16 @@
 import React, { use } from 'react';
 import { AuthContext } from '../Firebase/AuthProvider';
+import { useNavigate } from 'react-router';
 
 const SocialLogin = () => {
+    // navigate 
+    const navigate = useNavigate();
     const {loginWithGoogle}=use(AuthContext);
     const handelGoogle=()=>{
         loginWithGoogle()
         .then(result=>{
             console.log(result)
+            navigate('/')
         }).catch(error=>{
             console.log(error)
         })

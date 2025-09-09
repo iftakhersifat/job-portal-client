@@ -3,10 +3,12 @@ import React, { use } from 'react';
 
 import registerLottie from '../../assets/lotties/Register.json'
 import { AuthContext } from '../Firebase/AuthProvider';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import SocialLogin from './SocialLogin';
 
 const Register = () => {
+  // navigate
+  const navigate = useNavigate();
 
     // for create user
     const {createUser} =use(AuthContext)
@@ -22,6 +24,7 @@ const Register = () => {
         createUser(email,password)
         .then(result=>{
             console.log(result)
+            navigate("/")
         })
         .catch(error=>{
             console.log(error)
