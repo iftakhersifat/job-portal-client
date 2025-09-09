@@ -3,6 +3,8 @@ import React, { use } from 'react';
 
 import registerLottie from '../../assets/lotties/Register.json'
 import { AuthContext } from '../Firebase/AuthProvider';
+import { Link } from 'react-router';
+import SocialLogin from './SocialLogin';
 
 const Register = () => {
 
@@ -46,6 +48,10 @@ const Register = () => {
 
           <div><a className="link link-hover">Forgot password?</a></div>
           <button className="btn btn-neutral mt-4">Register</button>
+
+          <SocialLogin></SocialLogin>
+
+          <Link to="/login">Do you have an account? <span className="text-red-500 underline">Login</span></Link>
         </fieldset>
         </form>
 
