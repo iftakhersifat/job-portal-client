@@ -42,7 +42,7 @@ const Steps = () => {
         {/* Steps Grid */}
         <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 mt-12">
           {steps.map((item, i) => (
-          <div key={i} className="relative group rounded-xl overflow-hidden shadow-md hover:shadow-xl">
+          <div key={i} className="relative group rounded-xl border border-blue-50 overflow-hidden shadow-md hover:shadow-xl">
             
             {/* Overlay (blue background slide) */}
             <div className="absolute inset-0 bg-blue-600 transform -translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>

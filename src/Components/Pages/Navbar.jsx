@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
     const links=<>
-    <li><NavLink to="/" className={({ isActive }) => isActive ? 'text-green-600 underline' : 'hover:text-green-500 transition'}>Home</NavLink></li>
+    <li><NavLink to="/" className={({ isActive }) => isActive ? 'text-blue-600 underline' : 'hover:text-violet-500 transition'}>Home</NavLink></li>
     </>
 
     return (
@@ -38,8 +38,8 @@ const Navbar = () => {
   </div>
   <div className="navbar-end gap-4">
     {
-        user? <button onClick={handleLogOut} className='btn'>Log Out</button> : <><NavLink className="btn" to="/register">Register</NavLink>
-    <NavLink className="btn" to="/login">Login</NavLink></>
+        user? <button onClick={handleLogOut} className='btn'>Log Out</button> : <><NavLink className="bg-blue-600 text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium hover:bg-blue-700 transition text-sm sm:text-base focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" to="/register">Register</NavLink>
+    <NavLink className="bg-blue-600 text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium hover:bg-blue-700 transition text-sm sm:text-base focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" to="/login">Login</NavLink></>
     }
   </div>
 </div>
