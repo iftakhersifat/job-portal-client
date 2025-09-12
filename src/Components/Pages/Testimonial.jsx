@@ -60,7 +60,7 @@ const testimonials = [
 
 const Testimonial = () => {
   return (
-    <section className="container mx-auto text-center py-16 px-6">
+    <section className="container mx-auto text-center py-16 px-6 md:px-0">
       {/* Heading */}
       <h4 className="text-indigo-600 font-medium">Clients Testimonials</h4>
       <h2 className="text-3xl md:text-4xl font-bold my-2">

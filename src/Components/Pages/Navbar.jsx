@@ -38,7 +38,11 @@ const Navbar = () => {
   </div>
   <div className="navbar-end gap-4">
     {
-        user? <button onClick={handleLogOut} className='btn bg-red-500 text-white px-4 py-1 rounded-xl font-medium hover:bg-red-600 transition'>Log Out</button> : <>
+        user? <> <img src={user.photoURL || '/src/assets/user.png'} alt={user.displayName || 'User'} className="w-10 h-10 rounded-full border-2 border-[#613FE5] object-cover" />
+        <button onClick={handleLogOut} className='btn bg-red-500 text-white px-4 py-1 rounded-xl font-medium hover:bg-red-600 transition'>Log Out</button>
+        </> : 
+
+        <>
     <NavLink className="bg-blue-600 text-white px-4 py-1 rounded-xl font-medium hover:bg-blue-700 " to="/login">Login</NavLink></>
     }
   </div>
