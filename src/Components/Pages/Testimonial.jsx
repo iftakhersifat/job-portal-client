@@ -60,7 +60,7 @@ const testimonials = [
 
 const Testimonial = () => {
   return (
-    <section className="container mx-auto text-center py-16 px-6 md:px-0">
+    <section className="container mx-auto text-center mb-18 py-16 px-6 md:px-0">
       {/* Heading */}
       <h4 className="text-indigo-600 font-medium">Clients Testimonials</h4>
       <h2 className="text-3xl md:text-4xl font-bold my-2">
@@ -80,14 +80,14 @@ const Testimonial = () => {
         spaceBetween={30}
         slidesPerView={1}
         breakpoints={{
-          768: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
           1024: { slidesPerView: 3 },
         }}
         
       >
         {testimonials.map((item, i) => (
           <SwiperSlide key={i}>
-            <div className="bg-violet-50 mb-1 md:mb-2 p-6 md:h-[300px] h-[330px] rounded-2xl shadow-md hover:shadow-lg transition text-center">
+            <div className="bg-violet-50 mb-1 md:mb-8 lg:mb-2 p-6 md:h-[300px] h-[330px] rounded-2xl shadow-md hover:shadow-lg transition text-center">
               <FaQuoteLeft className="text-3xl text-purple-500 mb-4 mx-auto" />
               <p className="text-gray-600 text-sm">{item.text}</p>
 

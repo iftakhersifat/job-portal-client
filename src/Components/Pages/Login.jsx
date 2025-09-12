@@ -11,6 +11,7 @@ const Login = () => {
 
   // password show & off
   const [showPassword, setShowPassword]= useState(false);
+  
 
   // navigate
   const navigate = useNavigate();
@@ -19,6 +20,8 @@ const Login = () => {
 
     const handelLogin=e=>{
         e.preventDefault();
+
+      
 
         const email =e.target.email.value;
         const password =e.target.password.value;
@@ -59,7 +62,7 @@ const Login = () => {
 
 
           <div><a className="link link-hover">Forgot password?</a></div>
-          <button className="btn btn-neutral mt-4 bg-blue-500 hover:bg-blue-700 border-0">Login</button>
+          <button className="btn btn-neutral mt-4 text-white bg-blue-500 hover:bg-blue-700 border-0">Login</button>
 
           <SocialLogin></SocialLogin>
 

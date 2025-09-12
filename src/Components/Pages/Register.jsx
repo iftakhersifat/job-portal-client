@@ -10,7 +10,10 @@ const Register = () => {
   const navigate = useNavigate();
   const { createUser, UpdateUser } = use(AuthContext);
 
+  // show password
   const [showPassword, setShowPassword] = useState(false); 
+  const [error, setError] = useState('');
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 
   const handelRegister = e => {
     e.preventDefault();
@@ -21,6 +24,11 @@ const Register = () => {
     const photo = e.target.photo.value;
 
     console.log(name, email, password, photo);
+
+    if (!passwordRegex.test(password)) {
+      setError("Password must contain at least one uppercase letter, one lowercase letter, and be at least 8 characters long.");
+      return;
+    }
 
     createUser(email, password)
       .then(result => {
@@ -83,11 +91,12 @@ const Register = () => {
                     {showPassword ? <FaEyeSlash /> : <FaEye />}
                   </button>
                 </div>
+                {error && <p className="text-red-500 dark:text-red-400 text-sm">{error}</p>}
 
                 <div>
                   <a className="link link-hover">Forgot password?</a>
                 </div>
-                <button className="btn btn-neutral mt-4 bg-blue-500 hover:bg-blue-700 border-0">Register</button>
+                <button className="btn btn-neutral text-white mt-4 bg-blue-500 hover:bg-blue-700 border-0">Register</button>
 
                 <SocialLogin />
                 <Link to="/login">

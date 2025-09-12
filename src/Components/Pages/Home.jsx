@@ -8,11 +8,11 @@ const Home = () => {
     return (
         <div className=''>
             <Banner></Banner>
-            <div className='bg-gradient-to-r from-purple-50 to-white'>
+
             <Steps></Steps>
             <Recent></Recent>
             <Testimonial></Testimonial>
-            </div>
+
         </div>
     );
 };
