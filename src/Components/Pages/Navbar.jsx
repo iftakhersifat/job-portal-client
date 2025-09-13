@@ -43,7 +43,7 @@ const Navbar = () => {
         </> : 
 
         <>
-    <NavLink className="bg-blue-600 text-white px-4 py-1 rounded-xl font-medium hover:bg-blue-700 " to="/login">Login</NavLink></>
+    <NavLink className="bg-blue-600 text-white px-4 py-1 rounded-lg font-medium hover:bg-blue-700 " to="/login">Login</NavLink></>
     }
   </div>
 </div>
