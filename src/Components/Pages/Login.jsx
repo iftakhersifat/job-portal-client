@@ -3,7 +3,7 @@ import React, { use, useState } from 'react';
 import loginLottie from '../../assets/lotties/Login.json'
 import Lottie from 'lottie-react';
 import { AuthContext } from '../Firebase/AuthProvider';
-import { Link, useNavigate } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import SocialLogin from './SocialLogin';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
@@ -11,6 +11,8 @@ const Login = () => {
 
   // password show & off
   const [showPassword, setShowPassword]= useState(false);
+  const location =useLocation()
+    const from = location.state || "/"
   
 
   // navigate
@@ -31,7 +33,7 @@ const Login = () => {
         loginUser(email, password)
         .then(result=>{
             console.log(result.user);
-            navigate('/')
+            navigate(from)
         }) .catch(error=>{
             console.log(error);
         })
@@ -64,7 +66,7 @@ const Login = () => {
           <div><a className="link link-hover">Forgot password?</a></div>
           <button className="btn btn-neutral mt-4 text-white bg-blue-500 hover:bg-blue-700 border-0">Login</button>
 
-          <SocialLogin></SocialLogin>
+          <SocialLogin from={from}></SocialLogin>
 
           <Link to="/register" className='mt-3'>Don't have an account? <span className='text-red-500 underline'>Register</span></Link>
         </fieldset>

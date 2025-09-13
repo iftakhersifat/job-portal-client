@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router';
+import { Link, useLoaderData } from 'react-router';
 
 const JobDetails = () => {
     const job = useLoaderData()
@@ -56,11 +56,11 @@ const JobDetails = () => {
                           </div>
                         </div>
             
-                        {/* Footer: Apply Button */}
+                        {/* Apply Button */}
                         <div className="text-right">
-                          <button className="btn bg-blue-500 text-white px-4 py-2 rounded-xl hover:bg-blue-600">
+                          <Link to={`/apply/${job._id}`}><button className="btn bg-blue-500 text-white px-4 py-2 rounded-xl hover:bg-blue-600">
                             Apply Now
-                          </button>
+                          </button></Link>
                         </div>
                       </div>
                    

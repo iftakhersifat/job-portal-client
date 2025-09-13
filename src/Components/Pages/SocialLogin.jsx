@@ -2,7 +2,7 @@ import React, { use } from 'react';
 import { AuthContext } from '../Firebase/AuthProvider';
 import { useNavigate } from 'react-router';
 
-const SocialLogin = () => {
+const SocialLogin = ({from}) => {
     // navigate 
     const navigate = useNavigate();
     const {loginWithGoogle}=use(AuthContext);
@@ -10,7 +10,7 @@ const SocialLogin = () => {
         loginWithGoogle()
         .then(result=>{
             console.log(result)
-            navigate('/')
+            navigate(from || '/')
         }).catch(error=>{
             console.log(error)
         })
