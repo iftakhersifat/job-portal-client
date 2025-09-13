@@ -9,6 +9,7 @@ import Home from './Components/Pages/Home.jsx';
 import Register from './Components/Pages/Register.jsx';
 import AuthProvider from './Components/Firebase/AuthProvider.jsx';
 import Login from './Components/Pages/Login.jsx';
+import JobDetails from './Components/Jobs/JobDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {index: true, Component:Home},
       {path: "/register", Component:Register},
       {path: "/login", Component:Login},
+      {path: "/jobs/:id",
+        Component:JobDetails,
+        loader: ({params}) =>fetch(`http://localhost:3000/jobs/${params.id}`)
+      },
     ]
   },
 ]);

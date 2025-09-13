@@ -3,7 +3,7 @@ import React from "react";
 const Recent = () => {
   return (
     <div>
-      <section className="flex flex-col md:flex-row items-center justify-between container mx-auto px-6 lg:px-0 py-16">
+      <section className="flex flex-col md:flex-row items-center justify-between container mx-auto px-6 md:px-0 py-16">
         
         {/* Left Content */}
         <div className="flex-1 space-y-4 text-center md:text-left">
