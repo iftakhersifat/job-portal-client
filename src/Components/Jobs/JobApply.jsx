@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import Hook from '../Hook/Hook';
 import axios from 'axios';
 import Swal from 'sweetalert2';
@@ -8,6 +8,9 @@ const JobApply = () => {
     const {id} =useParams();
     const {user}=Hook();
     console.log(id, user);
+
+    // navigate 
+    const navigate = useNavigate();
 
     // handel form
     const handleApplyForm= e =>{
@@ -35,7 +38,9 @@ const JobApply = () => {
   title: "Your Application has been Submitted",
   showConfirmButton: false,
   timer: 1500
-});
+}).then(() => {
+            navigate("/my-applications");
+          });
         }
     }).catch(err=>{
         console.log(err)
