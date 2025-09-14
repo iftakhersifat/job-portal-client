@@ -14,6 +14,12 @@ const Navbar = () => {
 
     const links=<>
     <li><NavLink to="/" className={({ isActive }) => isActive ? 'text-blue-600 underline' : 'hover:text-violet-500 transition'}>Home</NavLink></li>
+
+    {
+      user && <>
+      <li><NavLink to="/my-applications" className={({ isActive }) => isActive ? 'text-blue-600 underline' : 'hover:text-violet-500 transition'}>Applications</NavLink></li>
+      </>
+    }
     </>
 
     return (

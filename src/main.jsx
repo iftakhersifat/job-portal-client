@@ -12,6 +12,7 @@ import Login from './Components/Pages/Login.jsx';
 import JobDetails from './Components/Jobs/JobDetails.jsx';
 import PrivateRoute from './Components/Firebase/PrivateRoute.jsx';
 import JobApply from './Components/Jobs/JobApply.jsx';
+import MyApplications from './Components/Applications/MyApplications.jsx';
 
 const router = createBrowserRouter([
   {
@@ -26,10 +27,10 @@ const router = createBrowserRouter([
       {path: "/jobs/:id",
         Component:JobDetails,
         loader: ({params}) =>fetch(`http://localhost:3000/jobs/${params.id}`)
-      },
-      {
-        path: "/apply/:id", element: <PrivateRoute><JobApply></JobApply></PrivateRoute>
-      }
+      },{path: "/apply/:id", element: <PrivateRoute><JobApply></JobApply></PrivateRoute>},
+
+      // applications
+      {path: '/my-applications', element:<PrivateRoute><MyApplications></MyApplications></PrivateRoute>}
       ,
     ]
   },
