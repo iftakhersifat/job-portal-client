@@ -1,12 +1,33 @@
 import React from 'react';
+import Hook from '../Hook/Hook';
 
 const AddJob = () => {
+    // default hr email in input field 
+    const {user}=Hook();
+
     const handleJobAdd=e=>{
         e.preventDefault();
         const form = e.target;
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
-        console.log(data)
+        // console.log(data)
+
+        // for salary range 
+        const {min, max, currency, ...rest}=data
+        rest.salaryRange={min,max,currency}
+        // console.log(rest)
+
+        // for requirements 
+        rest.requirements=rest.requirements.split(',').map(req=>req.trim())
+        // console.log(rest)
+
+        // for responsibilities
+        rest.responsibilities = rest.responsibilities.split(',').map(req=>req.trim())
+        console.log(rest)
+
+        // check is all input field is show or not 
+        console.log(Object.keys(rest).length)
+
 
     }
     return (
@@ -36,9 +57,9 @@ const AddJob = () => {
                 <legend className="fieldset-legend">Job Type</legend>
             <div className="filter">
                 <input className="btn filter-reset" type="radio" name="job-type" aria-label="All"/>
-                <input className="btn" type="radio" name="job-type" aria-label="On-Site"/>
-                <input className="btn" type="radio" name="job-type" aria-label="Remote"/>
-                <input className="btn" type="radio" name="job-type" aria-label="Hybrid"/>
+                <input className="btn" type="radio" name="job-type" value="On-Site" aria-label="On-Site"/>
+                <input className="btn" type="radio" name="job-type" value="Remote" aria-label="Remote"/>
+                <input className="btn" type="radio" name="job-type" value="Hybrid" aria-label="Hybrid"/>
             </div>
             </fieldset>
 
@@ -113,10 +134,10 @@ const AddJob = () => {
               <legend className="fieldset-legend">HR Info</legend>
             
               <label className="label">HR Name</label>
-              <input type="text" name='hr_name' placeholder="HR Name..." className="input input-bordered w-full" required />
+              <input type="text" name='hr_name'  placeholder="HR Name..." className="input input-bordered w-full" required />
             
               <label className="label">HR Email</label>
-              <input type="text" className="input input-bordered w-full" name='hr_email' placeholder="HR Email..." />
+              <input type="text" className="input input-bordered w-full" name='hr_email' defaultValue={user.email} placeholder="HR Email..." />
             </fieldset>
 
             {/* job add button */}
