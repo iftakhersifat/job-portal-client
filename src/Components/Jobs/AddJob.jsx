@@ -1,5 +1,7 @@
 import React from 'react';
 import Hook from '../Hook/Hook';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const AddJob = () => {
     // default hr email in input field 
@@ -25,8 +27,26 @@ const AddJob = () => {
         rest.responsibilities = rest.responsibilities.split(',').map(req=>req.trim())
         console.log(rest)
 
+        // status
+        rest.status="active";
+
         // check is all input field is show or not 
         console.log(Object.keys(rest).length)
+
+        // send job add data in backend by axios
+        axios.post("http://localhost:3000/jobs",rest)
+        .then(res=>{
+            if(res.data.insertedId){
+                Swal.fire({
+                title: "This New Job has been Added and Published Successfully",
+                icon: "success",
+                draggable: true
+              });
+            }
+        })
+        .catch(err=>{
+            console.log(err)
+        })
 
 
     }
