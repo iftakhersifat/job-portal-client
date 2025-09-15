@@ -34,11 +34,11 @@ const JobApply = () => {
     .then(res=>{
         if(res.data.insertedId){
             Swal.fire({
-  icon: "success",
-  title: "Your Application has been Submitted",
-  showConfirmButton: false,
-  timer: 1500
-}).then(() => {
+            icon: "success",
+            title: "Your Application has been Submitted",
+            showConfirmButton: false,
+            timer: 1500
+          }).then(() => {
             navigate("/my-applications");
           });
         }

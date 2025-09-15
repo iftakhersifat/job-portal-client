@@ -19,6 +19,7 @@ const Navbar = () => {
       user && <>
       <li><NavLink to="/my-applications" className={({ isActive }) => isActive ? 'text-blue-600 underline' : 'hover:text-violet-500 transition'}>Applications</NavLink></li>
       <li><NavLink to="/add-job" className={({ isActive }) => isActive ? 'text-blue-600 underline' : 'hover:text-violet-500 transition'}>Add Job</NavLink></li>
+      <li><NavLink to="/post-job" className={({ isActive }) => isActive ? 'text-blue-600 underline' : 'hover:text-violet-500 transition'}>My Posted Jobs</NavLink></li>
       </>
     }
     </>

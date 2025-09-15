@@ -14,6 +14,8 @@ import PrivateRoute from './Components/Firebase/PrivateRoute.jsx';
 import JobApply from './Components/Jobs/JobApply.jsx';
 import MyApplications from './Components/Applications/MyApplications.jsx';
 import AddJob from './Components/Jobs/AddJob.jsx';
+import MyPostedJobs from './Components/Jobs/MyPostedJobs.jsx';
+import ViewApplications from './Components/Jobs/ViewApplications.jsx';
 
 const router = createBrowserRouter([
   {
@@ -35,6 +37,13 @@ const router = createBrowserRouter([
 
       // add-job
       {path: '/add-job', element:<PrivateRoute><AddJob></AddJob></PrivateRoute>},
+      // post-job
+      {path: '/post-job', element:<PrivateRoute><MyPostedJobs></MyPostedJobs></PrivateRoute>},
+
+      // view applications
+      {path: '/applications/:id', element:<PrivateRoute><ViewApplications></ViewApplications></PrivateRoute>},
+
+
     ]
   },
 ]);
