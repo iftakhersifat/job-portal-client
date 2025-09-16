@@ -9,7 +9,7 @@ const postedJobs=email=>{
 const MyPostedJobs = () => {
     const {user} =Hook();
     return (
-        <div>
+        <div  className="flex justify-center items-center">
             <Suspense fallback={<span>Loading Posted Jobs List...</span>}>
                 <PostedJobList postedJobs={postedJobs(user.email)}></PostedJobList>
             </Suspense>

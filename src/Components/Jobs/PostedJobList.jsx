@@ -31,16 +31,9 @@ const PostedJobList = ({postedJobs}) => {
         </th>
         <td>
           <div className="flex items-center gap-3">
-            {/* <div className="avatar">
-              <div className="mask mask-squircle h-12 w-12">
-                <img
-                  src={lists.company_logo}
-                  alt="Avatar Tailwind CSS Component" />
-              </div>
-            </div> */}
             <div>
               <div className="font-bold">{post.company}</div>
-              {/* <div className="text-sm opacity-50">{lists.title}</div> */}
+
             </div>
           </div>
         </td>

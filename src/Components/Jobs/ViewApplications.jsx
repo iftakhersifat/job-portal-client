@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 const ViewApplications = () => {
     const {id}=useParams();
     const load = useLoaderData();
+    // console.log(id);
 
     // status change
     const handleStatus =(e, applicationID)=>{
@@ -26,18 +27,16 @@ const ViewApplications = () => {
     });
     }
     return (
-        <div className='container mx-auto'>
-            <h1>{id} : {load.length}</h1>
+        <div className='container mx-auto py-12'>
+            <h1 className='text-center text-2xl font-bold mb-4'>Total Application List : <span className='text-blue-500'>{load.length}</span></h1>
             <div className="overflow-x-auto">
   <table className="table">
     {/* head */}
     <thead>
       <tr>
-        <th>
-          List
-        </th>
-        <th>Company</th>
-        <th>Job Category & Location</th>
+        <th>List</th>
+        <th>Email</th>
+        <th>Resume & Others Link</th>
         <th>Status</th>
         <th></th>
       </tr>
@@ -53,25 +52,21 @@ const ViewApplications = () => {
           <div className="flex items-center gap-3">
             <div>
               <div className="font-bold">{post.applicant}</div>
-              {/* <div className="text-sm opacity-50">{lists.title}</div> */}
             </div>
           </div>
         </td>
-        <td>
-          {post.resume}
+        <td> {post.resume}
         </td>
-        <td><select
-  value={post.status || "Updated Status"}
-  onChange={(e) => handleStatus(e, post._id)}
->
-  <option disabled value="">Updated Status</option>
-  <option>Under Review</option>
-  <option>Call For Interview</option>
-  <option>Hired</option>
-  <option>Rejected</option>
-</select>
+        <td>
+        <select  value={post.status}  onChange={(e) => handleStatus(e, post._id)}>
+          <option disabled value="">Updated Status</option>
+          <option>Under Review</option>
+          <option>Call For Interview</option>
+          <option>Hired</option>
+          <option>Rejected</option>
+        </select>
 
-</td>
+        </td>
         
       </tr>
         
