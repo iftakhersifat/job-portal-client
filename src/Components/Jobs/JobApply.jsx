@@ -27,7 +27,8 @@ const JobApply = () => {
       applicant: user.email,
       linkedIn,
       github,
-      resume
+      resume,
+      status
     };
 
     axios.post("http://localhost:3000/applications", application)

@@ -41,7 +41,9 @@ const router = createBrowserRouter([
       {path: '/post-job', element:<PrivateRoute><MyPostedJobs></MyPostedJobs></PrivateRoute>},
 
       // view applications
-      {path: '/applications/:id', element:<PrivateRoute><ViewApplications></ViewApplications></PrivateRoute>},
+      {path: '/applications/:id', element:<PrivateRoute><ViewApplications></ViewApplications></PrivateRoute>,
+        loader: ({params}) =>fetch(`http://localhost:3000/applications/job/${params.id}`)
+      },
 
 
     ]
