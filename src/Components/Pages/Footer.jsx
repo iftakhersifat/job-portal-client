@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router';
+import { Link, useLocation } from 'react-router';
 
 const Footer = () => {
   const location = useLocation();
@@ -34,10 +34,10 @@ const Footer = () => {
 
         <nav className='flex flex-col space-y-2'>
           <h6 className="footer-title">Company</h6>
-          <a className="link link-hover">About us</a>
+          <Link to="/about-us" className="link link-hover">About us</Link>
           <a className="link link-hover">Contact</a>
           <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
+          <Link to="/blogs" className="link link-hover">Blogs</Link>
         </nav>
 
         <nav className='flex flex-col space-y-2'>

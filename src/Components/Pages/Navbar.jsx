@@ -14,6 +14,16 @@ const Navbar = () => {
 
     const links=<>
     <li><NavLink to="/" className={({ isActive }) => isActive ? 'text-blue-600 underline' : 'hover:text-violet-500 transition'}>Home</NavLink></li>
+    <li className="relative group">
+          <span className="hover:text-violet-500 transition">Pages</span>
+          {/* Dropdown Menu */}
+          <ul className="absolute left-0 top-full mt-2 w-40 bg-blue-200 shadow-md rounded-md opacity-0 group-hover:opacity-100 transition-opacity z-50">
+            {/* 2 pages */}
+            <li><NavLink  to="/about-us"  className="block px-4 py-2 hover:bg-violet-100">About Us</NavLink></li>
+            <li><NavLink to="/blogs" className="block px-4 py-2 hover:bg-violet-100">Blogs</NavLink></li>
+          </ul>
+    </li>
+     
 
     {
       user && <>
