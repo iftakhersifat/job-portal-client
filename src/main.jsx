@@ -18,6 +18,7 @@ import MyPostedJobs from './Components/Jobs/MyPostedJobs.jsx';
 import ViewApplications from './Components/Jobs/ViewApplications.jsx';
 import AboutUs from './Components/Pages/AboutUs.jsx';
 import Blogs from './Components/Pages/Blogs.jsx';
+import NotFound from './Components/Pages/NotFound.jsx';
 
 const router = createBrowserRouter([
   {
@@ -53,9 +54,12 @@ const router = createBrowserRouter([
       {path:"/about-us", Component: AboutUs},
       {path:"/blogs", Component: Blogs},
 
-
     ]
   },
+  {
+    path:"*",
+    Component: NotFound
+  }
 ]);
 
 createRoot(document.getElementById('root')).render(
